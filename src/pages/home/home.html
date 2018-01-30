@@ -1,14 +1,26 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Chat
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list no-lines>
+    <ion-item *ngFor="let message of messages">
+      {{message.message}}
+    </ion-item>
+    <hr>
+    <ion-item style="margin-top:8px;">
+      <ion-input type="text" [(ngModel)]="newMessage" placeholder="Escribe aquí...."
+                style="border: 2px solid #ccc; padding-left: 0px; padding-right: 0px;">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="addMessage()" style="width:100%; height:40px; margin-left: 0px; margin-right: 0px;">
+        Enviar
+      </button>
+    </ion-item>
+  </ion-list>
 </ion-content>
