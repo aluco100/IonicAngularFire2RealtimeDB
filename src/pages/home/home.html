@@ -8,8 +8,8 @@
 
 <ion-content padding>
   <ion-list no-lines>
-    <ion-item *ngFor="let message of messages">
-      {{message.message}}
+    <ion-item *ngFor="let message of messages" text-wrap>
+      [{{message.uid}}] : {{message.message}}
     </ion-item>
     <hr>
     <ion-item style="margin-top:8px;">
